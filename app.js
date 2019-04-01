@@ -6,6 +6,8 @@ var bodyParser = require('body-parser');
 
 //MongoDB 접속
 var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+
 var db = mongoose.connection;
 db.on('error', console.error);
 db.once('open', function(){
